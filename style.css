@@ -51,26 +51,34 @@ body{
     margin: 20px 0px 60px 0px;
     text-transform: capitalize;
 }
+.container .buttondiv{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 100px; */
+}
 .container button.btn{
     background: #fff;
     border: none;
-    padding: 15px 45px;
+    padding: 15px 0;
     border-radius: 5px;
     color: #f43543;
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
+    width: 55%;
 }
 
 .container button#share-quote {
     background: #fff;
     border: none;
-    padding: 15px 45px;
+    padding: 15px 0;
     border-radius: 5px;
     color: #f43543;
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
-    margin-top: 20px;
-    margin-left: 25px;
+    width: 40%;
 }
