@@ -1,6 +1,7 @@
 const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const button = document.querySelector(".btn");
+const shareQuoteButton = document.getElementById("share-quote");
 
 const url = "https://api.quotable.io/random";
 let getQuote = () =>{
@@ -13,6 +14,22 @@ let getQuote = () =>{
     })
 };
 
+const shareQuote = () => {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Random Quote',
+            text: quote.textContent + ' - ' + author.textContent,
+            url: document.URL
+        })
+        .then(() => console.log('Shared successfully'))
+        .catch(error => console.error('Error sharing:', error));
+    } else {
+        console.log('Web Share API not supported on this device.');
+    }
+};
+
+
 button.addEventListener('click', getQuote);
+shareQuoteButton.addEventListener('click', shareQuote);
 
 window.addEventListener("load", getQuote());

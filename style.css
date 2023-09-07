@@ -51,7 +51,7 @@ body{
     margin: 20px 0px 60px 0px;
     text-transform: capitalize;
 }
-.container button{
+.container button.btn{
     background: #fff;
     border: none;
     padding: 15px 45px;
@@ -60,4 +60,17 @@ body{
     font-weight: 600;
     font-size: 18px;
     cursor: pointer;
+}
+
+.container button#share-quote {
+    background: #fff;
+    border: none;
+    padding: 15px 45px;
+    border-radius: 5px;
+    color: #f43543;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 25px;
 }
