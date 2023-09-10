@@ -2,16 +2,28 @@ const quote = document.querySelector(".quote");
 const author = document.querySelector(".author");
 const button = document.querySelector(".btn");
 const shareQuoteButton = document.getElementById("share-quote");
+const loadingElement = document.getElementById("loading");
 
-const url = "https://api.quotable.io/random";
-let getQuote = () =>{
-    fetch(url).then(data => data.json())
-    .then((item) => {
-        console.log(item.content);
-        console.log(item.author);
-        quote.innerHTML = item.content;
-        author.innerHTML = item.author;
-    })
+const url = "https://api.quotable.io/random"; // Define the 'url' variable here
+
+let isLoading = false;
+
+const toggleLoadingState = () => {
+    isLoading = !isLoading;
+    button.disabled = isLoading;
+    loadingElement.style.display = isLoading ? "block" : "none";
+};
+
+let getQuote = () => {
+    toggleLoadingState();
+
+    fetch(url)
+        .then((data) => data.json())
+        .then((item) => {
+            quote.innerHTML = item.content;
+            author.innerHTML = item.author;
+            toggleLoadingState();
+        });
 };
 
 const shareQuote = () => {
@@ -28,8 +40,7 @@ const shareQuote = () => {
     }
 };
 
-
 button.addEventListener('click', getQuote);
 shareQuoteButton.addEventListener('click', shareQuote);
 
-window.addEventListener("load", getQuote());
+window.addEventListener("load", getQuote); // Removed the parentheses here

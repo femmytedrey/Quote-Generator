@@ -82,3 +82,10 @@ body{
     cursor: pointer;
     width: 40%;
 }
+
+.loading {
+    display: none;
+    color: #fff;
+    font-size: 16px;
+    margin: 20px 0px;
+}
