@@ -4,7 +4,7 @@ const button = document.querySelector(".btn");
 const shareQuoteButton = document.getElementById("share-quote");
 const loadingElement = document.getElementById("loading");
 
-const url = "https://api.quotable.io/random"; // Define the 'url' variable here
+const url = "https://api.quotable.io/random";
 
 let isLoading = false;
 
@@ -43,4 +43,4 @@ const shareQuote = () => {
 button.addEventListener('click', getQuote);
 shareQuoteButton.addEventListener('click', shareQuote);
 
-window.addEventListener("load", getQuote); // Removed the parentheses here
+window.addEventListener("load", getQuote);
